@@ -1,5 +1,5 @@
 # zmk-config
-This is the ZMK-Config repo for the Polarity works BT60 keyboard, with this you can customise your layout and keymap to suit your exact needs.
+This is the ZMK-Config repo for the Polarity works BT60 keyyboard, with this you can customise your layout and keymap to suit your exact needs.
 We have provided base keymaps for the following layouts on the soldered version: ANSI, ISO, Split backspace and right shift, Tsangan and all 1u bottom rows. These can be accessed by choosing the appropriate branch. The hotswap version has one fork which already includes support for split backspace however it is not bound to anything useful thus you will need to fork and customise to your taste
 
 # Customisation
