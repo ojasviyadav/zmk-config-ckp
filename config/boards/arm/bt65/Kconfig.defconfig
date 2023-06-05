@@ -29,6 +29,6 @@ config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
 config ZMK_KEYBOARD_NAME
-	default "BT65"
+	default "Ojasvi's Keyb"
 
 endif # BOARD_BT65
