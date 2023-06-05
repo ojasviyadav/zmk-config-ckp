@@ -7,11 +7,11 @@
 
 / {
     behaviors {
-        volknob: behavior_1 {
+        vol_knob: vol_knob {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "VOLUME_KNOB";
+            label = "VOL_KNOB";
             #sensor-binding-cells = <0>;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
     keymap {
@@ -34,7 +34,7 @@
                 &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans &trans &trans &kp END &kp PG_DN  &kp C_NEXT &trans &bl BL_INC
                 &bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans   &trans   &trans &bt BT_CLR &trans &bl BL_DEC
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&vol_knob>;
         };
     };
 };
