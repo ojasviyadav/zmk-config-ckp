@@ -1,42 +1,44 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-		default_layer {
-				// ------------------------------------------------------------------------------------------------------------
-				// |  `  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |BKSP | INS		|
-				// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   \    | DEL		|
-				// | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |PGUP	|
-				// |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   |   SHIFT  | UP   | PGDN|
-				// |  CTL  |  WIN  |  ALT  |            SPACE               | ALT | 1    |  MENU| LEFT |  DOWN    | RIGHT	|
-				// ------------------------------------------------------------------------------------------------------------
-			bindings = <
+        default_layer {
+            // ------------------------------------------------------------------------------------------------------------
+            // |  `  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |BKSP | INS		|
+            // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   \    | DEL		|
+            // | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |PGUP	|
+            // |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   |   SHIFT  | UP   | PGDN|
+            // |  CTL  |  WIN  |  ALT  |            SPACE               | ALT | 1    |  MENU| LEFT |  DOWN    | RIGHT	|
+            // ------------------------------------------------------------------------------------------------------------
 
-				&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9   &kp N0 &kp MINUS &kp EQUAL &kp BKSP &kp C_MUTE
-				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  	&kp BSLH &kp C_PP
-				&kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           	&kp RET &kp C_PREV
-				&kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT &kp UP &kp C_NEXT
-				&kp LCTRL &kp LALT &kp LGUI            &kp SPACE                          &kp LGUI  &mo 1 &kp RCTRL &kp LEFT &kp DOWN &kp RIGHT
-			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
-		};
-		raise {
-			bindings = <
-				&kp ESC &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9   &kp F10  &kp F11 &kp F12 &kp DEL &rgb_ug RGB_TOG
-				&rgb_ug RGB_SAI &rgb_ug RGB_SAD &kp UP &trans &trans &trans &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &sys_reset &rgb_ug RGB_HUI
-				&rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp DOWN &kp RIGHT &trans &trans &trans &trans &trans &trans &kp HOME  &kp PG_UP   &bootloader &rgb_ug RGB_HUD
-				&kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &rgb_ug RGB_BRD &trans &trans &trans &trans &kp END &kp PG_DN  &kp C_NEXT &trans &bl BL_INC
-				&bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans   &trans   &trans &bt BT_CLR &trans &bl BL_DEC
-			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
-		};
-	};
+            bindings = <
+  &kp ESC    &kp N1  &kp N2    &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8     &kp N9    &kp N0  &kp MINUS  &kp EQUAL            &kp BKSP               &kp C_MUTE
+  &kp TAB     &kp Q   &kp W     &kp E   &kp R   &kp T      &kp Y   &kp U   &kp I      &kp O     &kp P   &kp LBKT   &kp RBKT            &kp BSLH      &kp DEL
+ &kp CLCK     &kp A   &kp S     &kp D   &kp F   &kp G      &kp H   &kp J   &kp K      &kp L  &kp SEMI    &kp SQT                        &kp RET    &kp PG_UP
+&kp LSHFT             &kp Z     &kp X   &kp C   &kp V      &kp B   &kp N   &kp M  &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT              &kp UP    &kp PG_DN
+&kp LCTRL  &kp LALT          &kp LGUI                  &kp SPACE                             &kp LGUI      &mo 1  &kp RCTRL  &kp LEFT  &kp DOWN    &kp RIGHT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        raise {
+            bindings = <
+        &kp ESC           &kp F1        &kp F2             &kp F3      &kp F4  &kp F5  &kp F6  &kp F7   &kp F8  &kp F9    &kp F10    &kp F11          &kp F12               &bl BL_TOG                     &rgb_ug RGB_TOG
+&rgb_ug RGB_SAI  &rgb_ug RGB_SAD        &kp UP  &ext_power EP_TOG      &trans  &trans  &trans  &trans  &kp INS  &trans  &kp PSCRN   &kp SLCK  &kp PAUSE_BREAK               &sys_reset    &rgb_ug RGB_HUI
+&rgb_ug RGB_BRI  &rgb_ug RGB_BRD      &kp DOWN          &kp RIGHT      &trans  &trans  &trans  &trans   &trans  &trans   &kp HOME  &kp PG_UP                               &bootloader    &rgb_ug RGB_HUD
+     &kp C_PREV                   &kp C_VOL_DN       &kp C_VOL_UP  &kp C_MUTE  &trans  &trans  &trans   &trans  &trans    &kp END  &kp PG_DN       &kp C_NEXT                   &trans         &bl BL_INC
+     &bt BT_PRV       &bt BT_NXT                           &trans                      &trans                              &trans     &trans           &trans  &bt BT_CLR       &trans         &bl BL_DEC
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+    };
 };
